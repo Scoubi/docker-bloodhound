@@ -1,6 +1,6 @@
 # This is a fork 
 - This documentation is based of https://github.com/belane/docker-bloodhound  
-- This is my first Docker Image, so I choose my favorite project to leard.  
+- This is my first Docker Image, so I choose my favorite project to learn.  
 - I started from the Neo4j image instead of jdk to save some steps.
 
 
@@ -15,7 +15,7 @@ docker run -it \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   --device=/dev/dri:/dev/dri \
   -v $(pwd)/data:/data \
-  --name bloodhound belane/bloodhound
+  --name bloodhound scoubi/bloodhound
 ```
 
 ## Build Image
@@ -28,7 +28,7 @@ docker run -it \
 - **neo4j** version
 - **bloodhound** version
 
-`docker build . -t bloodhound --build-arg neo4j=3.4.8 --build-arg bloodhound=2.1.0`
+`docker build . -t bloodhound --build-arg neo4j=3.4.8 --build-arg bloodhound=latest`
 
 ## Run
 ```
@@ -59,7 +59,7 @@ docker start bloodhound
 Login:
 - **Database URL:** bolt://localhost:7687
 - **DB Username:** neo4j
-- **DB Password:** blood
+- **DB Password:** neo4jj
 
 There is a `bloodhound/data` folder in your Desktop with the Ingestors.
 data folder is also mounted as volume, use it to drop your data and load it in  BloodHound GUI.
